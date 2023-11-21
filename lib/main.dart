@@ -115,7 +115,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Future<void> githubAPICall() async {
     try {
-      http.Response response = await http.get(Uri.parse("https://api.github.com/search/repositories?q=created:>2022-04-29&sort=stars&order=desc&per_page=60"), headers: {"Content-Type": "application/json"});
+      http.Response response = await http.get(Uri.parse("https://api.github.com/search/repositories?q=created:>2023-10-21&sort=stars&order=desc&per_page=60"), headers: {"Content-Type": "application/json"});
       dynamic res = jsonDecode(response.body);
       final parsed = (res['items'] as List).cast<Map<String, dynamic>>();
       List<Github> dataList = parsed.map<Github>((e) => Github.fromJson(e)).toList();
